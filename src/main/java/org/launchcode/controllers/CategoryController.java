@@ -19,7 +19,7 @@ public class CategoryController {
     @Autowired
     private CategoryDao categoryDao;
 
-    @RequestMapping(value = "")
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(Model model){
         model.addAttribute("categories", categoryDao.findAll());
         model.addAttribute("title", "Categories");
